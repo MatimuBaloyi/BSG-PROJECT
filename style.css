@@ -1,0 +1,572 @@
+/* BSG LaunchPad - Professional Styling */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    min-height: 250px;
+    text-align: center;
+}
+
+.logo-container {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.logo-container img {
+    height: 60px;
+}
+
+.header-center {
+    margin: 0 auto;
+}
+
+header h1 {
+    color: #1a365d;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 0.5rem; /* Add space below h1 */
+}
+
+/* Navigation Styles */
+nav {
+    background: rgba(26, 54, 93, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+nav a:hover::before {
+    left: 100%;
+}
+
+nav a:hover {
+    background: linear-gradient(45deg, #f56500, #e53e3e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 101, 0, 0.4);
+}
+
+/* Main Content Container */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Section Styles */
+section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+section h2 {
+    color: #1a365d;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 3px solid #f56500;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form div {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #34495e;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e6ed;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #f56500;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(245, 101, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Button Styles */
+button,
+.apply-job,
+.view-applications,
+.delete-job,
+.delete-application {
+    background: linear-gradient(45deg, #f56500, #e53e3e);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem;
+}
+
+button::before,
+.apply-job::before,
+.view-applications::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before,
+.apply-job:hover::before,
+.view-applications:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover,
+.apply-job:hover,
+.view-applications:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(245, 101, 0, 0.4);
+}
+
+/* Delete Button Styles */
+.delete-job,
+.delete-application {
+    background: linear-gradient(45deg, #2d3748, #1a202c);
+}
+
+.delete-job:hover,
+.delete-application:hover {
+    box-shadow: 0 10px 25px rgba(45, 55, 72, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Job Card Styles */
+.job {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #f56500;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.job::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(245, 101, 0, 0.05), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.job:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-left-color: #e53e3e;
+}
+
+.job:hover::before {
+    right: -30%;
+}
+
+.job h3 {
+    color: #1a365d;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.job p {
+    margin-bottom: 0.8rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+.job strong {
+    color: #34495e;
+    font-weight: 600;
+}
+
+/* Application Card Styles */
+.application {
+    background: linear-gradient(135deg, #fff8f5 0%, #fed7d7 100%);
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #f56500;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.application:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.application h3 {
+    color: #1a365d;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Details/Summary Styles */
+details {
+    margin: 1rem 0;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+summary {
+    padding: 1rem;
+    background: linear-gradient(45deg, #1a365d, #2d3748);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+summary:hover {
+    background: linear-gradient(45deg, #2d3748, #1a365d);
+}
+
+details[open] summary {
+    border-bottom: 2px solid #f56500;
+}
+
+details p {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Message Styles */
+#loginMessage,
+#registerMessage,
+#postJobMessage,
+#applicationMessage {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Success/Error Message Colors */
+#postJobMessage:not(:empty),
+#applicationMessage:not(:empty) {
+    background: linear-gradient(45deg, #f56500, #e53e3e);
+    color: white;
+}
+
+#loginMessage:not(:empty),
+#registerMessage:not(:empty) {
+    background: linear-gradient(45deg, #2d3748, #1a202c);
+    color: white;
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(26, 54, 93, 0.95);
+    backdrop-filter: blur(10px);
+    color: #ecf0f1;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Compact login/register box */
+.auth-section {
+    max-width: 420px;         /* Increased width */
+    margin: 2rem auto;
+    padding: 1.2rem 2rem;     /* Slightly more horizontal padding */
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    background: rgba(255,255,255,0.97);
+}
+
+.auth-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+}
+
+.auth-section form div {
+    margin-bottom: 0.5rem;     /* Even less space between fields */
+}
+
+.auth-section input,
+.auth-section select {
+    padding: 0.5rem 0.7rem;    /* Smaller input height */
+    font-size: 0.97rem;
+}
+
+.auth-section button {
+    margin-top: 0.3rem;
+    padding: 0.6rem 1.2rem;    /* Smaller button */
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav a {
+        display: block;
+        margin: 0.5rem 1rem;
+    }
+    
+    main {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+    
+    .job,
+    .application {
+        padding: 1.5rem;
+    }
+    
+    button,
+    .apply-job,
+    .view-applications,
+    .delete-job,
+    .delete-application {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    input,
+    select,
+    textarea {
+        padding: 0.8rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.job:hover h3,
+.application:hover h3 {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Glassmorphism Effect for Cards */
+.job,
+.application,
+section {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #f56500, #e53e3e);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #e53e3e, #f56500);
+}
+
+/* Welcome Section Special Styling */
+section p:first-of-type {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Form Container Enhancement */
+form {
+    position: relative;
+    z-index: 1;
+}
+
+form::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, rgba(245, 101, 0, 0.1), rgba(26, 54, 93, 0.1));
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+form:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced Visual Hierarchy */
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(45deg, #f56500, #e53e3e);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}

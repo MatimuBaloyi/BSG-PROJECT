@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Timu LaunchPad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Timu LaunchPad Admin Dashboard</h1>
+        <p>Manage job postings and applications</p>
+    </header>
+    
+    <nav>
+        <a href="#" id="viewJobsLink">View Jobs</a>
+        <a href="#" id="postJobLink">Post New Job</a>
+        <a href="applications.html">View Applications</a>
+        <a href="#" id="logoutLink">Logout</a>
+    </nav>
+    
+    <main>
+        <section id="jobsSection">
+            <h2>Current Job Postings</h2>
+            <div id="jobsList"></div>
+        </section>
+        
+        <section id="postJobSection" style="display: none;">
+            <h2>Post New Job</h2>
+            <form id="postJobForm">
+                <div>
+                    <label for="jobTitle">Job Title:</label>
+                    <input type="text" id="jobTitle" required>
+                </div>
+                <div>
+                    <label for="jobDescription">Description:</label>
+                    <textarea id="jobDescription" required></textarea>
+                </div>
+                <div>
+                    <label for="jobRequirements">Requirements:</label>
+                    <textarea id="jobRequirements" required></textarea>
+                </div>
+                <div>
+                    <label for="jobLocation">Location:</label>
+                    <input type="text" id="jobLocation" required>
+                </div>
+                <div>
+                    <label for="jobDeadline">Application Deadline:</label>
+                    <input type="date" id="jobDeadline" required>
+                </div>
+                <button type="submit">Post Job</button>
+            </form>
+            <p id="postJobMessage"></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Timu LaunchPad</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
