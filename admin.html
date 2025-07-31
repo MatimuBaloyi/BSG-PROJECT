@@ -10,7 +10,7 @@
     <header>
         <div class="logo-container">
             <a href="index.html">
-                <img src="logo.png" alt="Timu Logo">
+                <img src="logo.png" alt="BSG Logo">
             </a>
         </div>
         <div class="header-center">
@@ -23,6 +23,8 @@
         <a href="#" id="viewJobsLink">View Jobs</a>
         <a href="#" id="postJobLink">Post New Job</a>
         <a href="applications.html">View Applications</a>
+        <a href="#" id="notificationsLink">Notifications <span id="notificationBadge" class="badge">0</span></a>
+        <a href="#" id="backupLink">Data Backup</a>
         <a href="#" id="logoutLink">Logout</a>
     </nav>
     
@@ -58,6 +60,23 @@
                 <button type="submit">Post Job</button>
             </form>
             <p id="postJobMessage"></p>
+        </section>
+
+        <section id="notificationsSection" style="display: none;">
+            <h2>Notifications</h2>
+            <div id="notificationsList"></div>
+        </section>
+
+        <section id="backupSection" style="display: none;">
+            <h2>Data Backup</h2>
+            <div class="backup-options">
+                <button id="exportData">Export All Data</button>
+                <div class="import-data">
+                    <input type="file" id="importFile" accept=".json">
+                    <button id="importData">Import Data</button>
+                </div>
+            </div>
+            <p id="backupMessage"></p>
         </section>
     </main>
     

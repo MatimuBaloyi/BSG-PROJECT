@@ -60,35 +60,37 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('registerForm')) {
         document.getElementById('registerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const name = document.getElementById('regName').value;
-            const email = document.getElementById('regEmail').value;
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
             const password = document.getElementById('regPassword').value;
             const confirmPassword = document.getElementById('regConfirmPassword').value;
-            
+            const resumeInput = document.getElementById('regResume');
+            const registerMessage = document.getElementById('registerMessage');
+
             if (password !== confirmPassword) {
-                document.getElementById('registerMessage').textContent = 'Passwords do not match';
+                registerMessage.textContent = "Passwords do not match.";
+                registerMessage.style.color = "red";
                 return;
             }
-            
-            const users = JSON.parse(localStorage.getItem('users'));
-            
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
             if (users.some(u => u.email === email)) {
-                document.getElementById('registerMessage').textContent = 'Email already registered';
+                registerMessage.textContent = "Email already registered.";
+                registerMessage.style.color = "red";
                 return;
             }
-            
-            const newUser = {
-                id: Date.now().toString(),
+
+            // Optionally handle resume file (not stored in localStorage)
+            users.push({
                 name,
                 email,
-                password
-            };
-            
-            users.push(newUser);
+                password,
+                userType: "user"
+            });
             localStorage.setItem('users', JSON.stringify(users));
-            document.getElementById('registerMessage').textContent = 'Registration successful! Please login.';
-            document.getElementById('registerForm').reset();
+            registerMessage.textContent = "Registration successful! You can now log in.";
+            registerMessage.style.color = "green";
+            this.reset();
         });
     }
     

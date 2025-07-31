@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Timu LaunchPad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Profile</h1>
+        <p>Manage your account and applications</p>
+    </header>
+    
+    <nav>
+        <a href="jobs.html">Back to Jobs</a>
+        <a href="applications-status.html">My Applications</a>
+        <a href="#" id="profileLogoutLink">Logout</a>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>Profile Information</h2>
+            <form id="profileForm">
+                <div>
+                    <label for="profileName">Full Name:</label>
+                    <input type="text" id="profileName" required>
+                </div>
+                <div>
+                    <label for="profileEmail">Email:</label>
+                    <input type="email" id="profileEmail" required readonly>
+                </div>
+                <div>
+                    <label for="profilePhone">Phone:</label>
+                    <input type="tel" id="profilePhone">
+                </div>
+                <div>
+                    <label for="profileResume">Update Resume (PDF only):</label>
+                    <input type="file" id="profileResume" accept=".pdf">
+                    <p id="currentResumeLink" class="resume-link">No resume uploaded</p>
+                </div>
+                <button type="submit">Save Changes</button>
+            </form>
+            <p id="profileMessage"></p>
+        </section>
+        
+        <section>
+            <h2>Saved Jobs <span id="savedJobsCount"></span></h2>
+            <div id="savedJobsList" class="job-list"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Timu LaunchPad</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+    <script src="user.js"></script>
+</body>
+</html>
